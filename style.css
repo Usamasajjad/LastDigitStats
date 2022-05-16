@@ -28,25 +28,39 @@ div.numberContainer div {
     width: 100%;
     border-radius: 5px;
     font-size: 20px;
-}
-
-div.numberContainer>div:nth-of-type(odd) {
-    background-color: #ff5845;
+    text-align: center;
 }
 
 div.infoContainer {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-top: 50px;
 }
 
 div.infoContainer div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: auto;
-    width: 100%;
     border-radius: 5px;
     font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+div#history {
+    background: #ff5845;
+    overflow: scroll;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+    height: 400px;
+}
+
+div#ticker {
+    height: auto;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
 }
 
 div.footer {
@@ -60,4 +74,17 @@ div.footer {
     padding: 10px;
     position: absolute;
     bottom: 0;
+}
+
+@keyframes highlight {
+    0% {
+        background: #ff5845;
+    }
+    100% {
+        background: white;
+    }
+}
+
+.notransition {
+    animation: none !important;
 }

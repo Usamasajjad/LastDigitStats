@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
+    <!-- <script src="script.js" type="module"></script> -->
+    <script src="bundle.js"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -15,37 +17,41 @@
         Deriv - Last Digit Stats - Frontend Assessment
     </div>
 
+    <div class="button">
+        <a href="https://oauth.deriv.com/oauth2/authorize?app_id=31861"  target="_blank">Authenticate</a>
+    </div>
+
     <!-- Contains Ticker Stats -->
     <div class="numberContainer">
 
-        <div class="box0">
+        <div id="box0">
             0
          </div>
-        <div class="box1">
+        <div id="box1">
             1
         </div>
-        <div class="box2">
+        <div id="box2">
             2
         </div>
-        <div class="box3">
+        <div id="box3">
             3
         </div>
-        <div class="box4">
+        <div id="box4">
             4
         </div>
-        <div class="box5">
+        <div id="box5">
             5
         </div>
-        <div class="box6">
+        <div id="box6">
             6
         </div>
-        <div class="box7">
+        <div id="box7">
             7
         </div>
-        <div class="box8">
+        <div id="box8">
             8
         </div>
-        <div class="box9">
+        <div id="box9">
             9
         </div>
 
@@ -54,12 +60,12 @@
     <!-- Contains Ticker Information -->
     <div class="infoContainer">
 
-        <div class="history">
-            add history table here
+        <div id="history">
+            
         </div>
 
-        <div class="ticker">
-            add most recent ticker price here
+        <div id="ticker">
+
         </div>
 
     </div>

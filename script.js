@@ -1,12 +1,12 @@
-const WebSocket = require('ws');
-
-// You can register for an app_id here https://developers.deriv.com/docs/app-registration/.
-const app_id = 1089; // Replace with your app_id or leave as 1089 for testing.
+// /home/usama/.npm-global/bin/browserify script.js -o bundle.js
+const app_id = 31861; // Replace with your app_id or leave as 1089 for testing.
 
 const ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + app_id);
 
+let prices = []
+let currentPrice
 // You can get your token here https://app.deriv.com/account/api-token. 
-const token = ''; // Replace with your API token.
+const token = "IeFrwa9FmIMVgPB"; // Replace with your API token.
 
 ws.onopen = function (evt) {
     ws.send(JSON.stringify({ "authorize": token })) // First send an authorize call.
@@ -31,8 +31,19 @@ ws.onmessage = function (msg) {
             "style": "ticks"
         }));
     } else if (data.msg_type == 'history') { // Our buy request was successful let's print the results. 
-        console.log("Last 1000 Prices: %s", data.history.prices);
+        // console.log("Last 1000 Prices: ", data.history.prices + '\n');
+        for (i in data.history.prices) {
+            prices[i] = parseFloat(data.history.prices[i])
+        }
+        // prices.push(data.history.prices);
+        console.log(prices);
+        console.log(typeof(prices));
+        document.getElementById("history").innerHTML = prices.join('<br>');
     } else if (data.msg_type == 'tick') {
-        console.log("New Tick Price: %s", data.tick.ask);
+        // console.log("New Tick Price: %s", data.tick.ask);
+        currentPrice = parseFloat(data.tick.ask)
+        document.getElementById("ticker").innerHTML = "Current Price: " + currentPrice;
+        // console.log(currentPrice)
     }
 };
+
