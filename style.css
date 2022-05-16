@@ -4,6 +4,37 @@
     margin: 0;
 }
 
+div.button {
+    background: black;
+    z-index: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+div.button a {
+    background: white;
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+div.button a:link { text-decoration: none; }
+div.button a:hover { background: lightgray; }
+div.button a:active { text-decoration: none; }
+div.button a:visited { text-decoration: none; }
+
+
+
+
 div.header {
     background: black;
     color: white;
@@ -13,6 +44,9 @@ div.header {
     font-weight: 800;
     text-align: center;
     padding: 20px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
 }
 
 div.numberContainer {
@@ -74,6 +108,7 @@ div.footer {
     padding: 10px;
     position: absolute;
     bottom: 0;
+    z-index: 2;
 }
 
 @keyframes highlight {
