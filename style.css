@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-div.button {
+div#button {
     background: black;
     z-index: 1;
     position: absolute;
@@ -18,7 +18,7 @@ div.button {
     text-decoration: none;
 }
 
-div.button a {
+div#button a {
     background: white;
     color: black;
     font-size: 20px;
@@ -27,10 +27,10 @@ div.button a {
 }
 
 
-div.button a:link { text-decoration: none; }
-div.button a:hover { background: lightgray; }
-div.button a:active { text-decoration: none; }
-div.button a:visited { text-decoration: none; }
+div#button a:link { text-decoration: none; }
+div#button a:hover { background: lightgray; }
+div#button a:active { text-decoration: none; }
+div#button a:visited { text-decoration: none; }
 
 
 

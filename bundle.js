@@ -76,7 +76,7 @@ ws.onmessage = function (msg) {
         max = Math.max(...numericPercentages);
         console.log(min)
         console.log(max)
-        
+
         for(i=0; i < 9; i++) {
             let box = document.getElementById('box' + (i+1));
             if(roundedPercentages[i] == max) {
@@ -86,8 +86,10 @@ ws.onmessage = function (msg) {
                 box.style.color = "red";
             }
         }
-        
-        
+        console.log(window.location.href)
+        if(window.location.href != 'https://derivapp.netlify.app/'){
+            document.getElementById('button').style.display = 'none';
+        }
 
     } else if (data.msg_type == 'tick') {
         // console.log("New Tick Price: %s", data.tick.ask);
